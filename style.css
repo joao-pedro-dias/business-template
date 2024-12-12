@@ -1015,10 +1015,10 @@ p {
   color: var(--white);
   font-weight: 600;
 }
-.header-eight .video-button .icon-btn {
+/* .header-eight .video-button .icon-btn {
   background: var(--white);
   color: var(--primary);
-}
+} */
 
 /*===========================
   about-05 css
@@ -1120,6 +1120,7 @@ p {
 .about-five-content .about-five-tab .tab-content {
   border: none;
   padding-top: 30px;
+  height: 200px;
 }
 .about-five-content .about-five-tab .tab-content p {
   margin-bottom: 20px;
@@ -1179,6 +1180,7 @@ p {
 .services-eight {
   padding: 100px 0 0 0;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .services-eight {
     padding: 60px 0 0 0;
@@ -1190,6 +1192,7 @@ p {
   }
 }
 .services-eight .single-services {
+  height: 280px;
   padding: 40px 30px;
   border: 1px solid var(--gray-3);
   border-radius: 10px;
@@ -1199,16 +1202,22 @@ p {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  max-height: 426px;
+  overflow-y: scroll;
+  position: relative;
 }
 
 .services-eight .single-services:hover {
   box-shadow: var(--shadow-4);
 }
-.services-eight .single-services:hover .service-icon {
+/* .services-eight .single-services:hover .service-icon {
   color: var(--white);
   border-color: transparent;
   background: var(--primary);
-}
+  max-height: 426px;
+  overflow-y: scroll;
+  position: relative;
+} */
 .services-eight .single-services:hover .service-icon::after {
   opacity: 1;
   visibility: visible;
@@ -1219,11 +1228,9 @@ p {
   border-radius: 50%;
   margin-bottom: 25px;
   background: var(--white);
-  border: 2px solid var(--primary);
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--primary);
+  /* justify-content: center; */
   font-size: 40px;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -1232,7 +1239,7 @@ p {
   transition: all 0.3s ease-out 0s;
   position: relative;
 }
-.services-eight .single-services .service-icon::after {
+/* .services-eight .single-services .service-icon::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -1250,7 +1257,7 @@ p {
   z-index: -1;
   border-radius: 50%;
   border: 1px solid transparent;
-}
+} */
 .services-eight .single-services .service-content h4 {
   font-size: 20px;
   font-weight: 600;
@@ -1941,13 +1948,21 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--primary); /* Cor do fundo da barra de rolagem */
+  background: var(--white); /* Cor do fundo da barra de rolagem */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white; /* Cor da barra de rolagem */
+  background: var(--primary); /* Cor da barra de rolagem */
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: white; /* Cor quando passa o mouse */
+}
+
+ul{
+  text-align: justify;
+}
+
+hr{
+  color: var(--gray-3);
 }

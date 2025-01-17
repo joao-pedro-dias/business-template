@@ -970,12 +970,14 @@ p {
   .header-eight .header-content h1  {
     font-size: 35px;
     line-height: 45px;
+    text-align: center;
   }
 }
 @media (max-width: 767px) {
   .header-eight .header-content h1  {
     font-size: 30px;
     line-height: 42px;
+    text-align: center;
   }
 }
 .header-eight .header-content h1 span {
@@ -985,9 +987,12 @@ p {
   margin-top: 30px;
   color: var(--white);
   opacity: 0.7;
+  text-align: center;
 }
 .header-eight .button {
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 .header-eight .primary-btn {
   margin-right: 12px;
@@ -1193,7 +1198,7 @@ p {
 }
 .services-eight .single-services {
   height: 280px;
-  padding: 40px 30px;
+  padding: 20px 30px;
   border: 1px solid var(--gray-3);
   border-radius: 10px;
   margin-bottom: 30px;
@@ -1962,10 +1967,19 @@ p {
   background: white; /* Cor quando passa o mouse */
 }
 
-ul{
+.ul-footer{
   text-align: center;
+  margin-bottom: 15px;
+}
+
+.ul-services{
+  text-align: justify;
 }
 
 hr{
   color: var(--gray-3);
+}
+
+.footer-end{
+  margin-bottom: 5px;
 }

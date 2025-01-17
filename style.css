@@ -965,19 +965,18 @@ p {
   color: var(--white);
   text-shadow: 0px 3px 8px #00000017;
   text-transform: capitalize;
+  text-align: center;
 }
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 990px) and (max-width: 2500px) {
   .header-eight .header-content h1  {
     font-size: 35px;
     line-height: 45px;
-    text-align: center;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 989px) {
   .header-eight .header-content h1  {
     font-size: 30px;
     line-height: 42px;
-    text-align: center;
   }
 }
 .header-eight .header-content h1 span {
@@ -988,6 +987,7 @@ p {
   color: var(--white);
   opacity: 0.7;
   text-align: center;
+  
 }
 .header-eight .button {
   margin-top: 40px;

@@ -4,8 +4,8 @@
 ===========================*/
 :root {
   --font-family: "Inter", sans-serif;
-  --primary: #aa3629;
-  --primary-dark: #892c21;
+  --primary: #3b0100;
+  --primary-dark: #3b0100;
   --primary-light: #cc5b4e;
   
   --accent: #d49400;
@@ -16,6 +16,7 @@
   --success-dark: #388e3c;
   --success-light: #81c784;
   
+  --secondary-gold: #c39147;
   --secondary: #3f51b5;
   --secondary-dark: #303f9f;
   --secondary-light: #7986cb;
@@ -535,6 +536,7 @@ p {
 }
 .navbar-area.navbar-nine .navbar .navbar-nav .nav-item a.active {
   opacity: 1;
+  color: var(--secondary-gold);
 }
 .navbar-area.navbar-nine .navbar .navbar-nav .nav-item a i {
   font-size: 12px;
@@ -913,12 +915,12 @@ p {
 /* ===== Buttons Css ===== */
 .header-eight .primary-btn {
   background: var(--primary);
-  color: var(--white);
+  color: var(--secondary-gold);
   box-shadow: var(--shadow-2);
 }
 .header-eight .active.primary-btn, .header-eight .primary-btn:hover, .header-eight .primary-btn:focus {
   background: var(--primary-dark);
-  color: var(--white);
+  color: var(--secondary-gold);
   box-shadow: var(--shadow-4);
 }
 .header-eight .deactive.primary-btn {

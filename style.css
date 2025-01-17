@@ -1829,6 +1829,7 @@ p {
     padding-top: 30px;
     /* padding-bottom: 70px; */
     padding-bottom: 0px;
+    margin-bottom: 100px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {

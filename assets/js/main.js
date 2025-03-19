@@ -99,5 +99,4 @@
         document.getElementById("current-year").textContent = `© ${currentYear}`; // Atualiza o texto
     });
     
-
 })();

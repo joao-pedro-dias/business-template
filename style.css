@@ -1188,13 +1188,23 @@ p {
   padding: 100px 0 0 0;
 }
 
+.contacts-eight {
+  padding: 100px 0 0 0;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .services-eight {
+    padding: 60px 0 0 0;
+  }
+  .contacts-eight {
     padding: 60px 0 0 0;
   }
 }
 @media (max-width: 767px) {
   .services-eight {
+    padding: 60px 0 0 0;
+  }
+  .contacts-eight {
     padding: 60px 0 0 0;
   }
 }
@@ -1211,6 +1221,22 @@ p {
   transition: all 0.3s ease-out 0s;
   max-height: 426px;
   overflow-y: scroll;
+  position: relative;
+}
+
+.contacts-eight .single-contacts {
+  height: 500px;
+  padding: 20px 30px;
+  border: 1px solid var(--gray-3);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  max-height: 426px;
+  /* overflow-y: scroll; */
   position: relative;
 }
 
@@ -1246,6 +1272,29 @@ p {
   transition: all 0.3s ease-out 0s;
   position: relative;
 }
+
+.contacts-eight .single-contacts:hover .contact-icon::after {
+  opacity: 1;
+  visibility: visible;
+}
+.contacts-eight .single-contacts .contact-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  font-size: 40px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  position: relative;
+}
+
 /* .services-eight .single-services .service-icon::after {
   content: "";
   width: 100%;
@@ -1274,6 +1323,14 @@ p {
   color: var(--dark-3);
 }
 
+.contact-eight .single-contacts .contact-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact-eight .single-contacts .contact-content p {
+  color: var(--dark-3);
+}
 
 
 /*===== VIDEO ONE =====*/
@@ -1981,4 +2038,30 @@ p {
 
 hr{
   color: var(--gray-3);
+}
+
+.contact-content {
+  font-family: Arial, sans-serif;
+}
+
+.copy-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copy-icon {
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+}
+
+.copy-icon:hover {
+  color: #000;
+}
+
+.copied {
+  color: green;
+  font-size: 14px;
+  margin-left: 5px;
 }

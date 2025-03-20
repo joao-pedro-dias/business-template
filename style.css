@@ -1209,7 +1209,7 @@ p {
   }
 }
 .services-eight .single-services {
-  height: 280px;
+  height: 310px;
   padding: 20px 30px;
   border: 1px solid var(--gray-3);
   border-radius: 10px;
@@ -1314,6 +1314,7 @@ p {
   border-radius: 50%;
   border: 1px solid transparent;
 } */
+
 .services-eight .single-services .service-content h4 {
   font-size: 20px;
   font-weight: 600;
@@ -2071,4 +2072,32 @@ hr{
   color: green;
   font-size: 14px;
   margin-left: 5px;
+}
+
+.saiba-mais {
+  position: absolute;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  bottom: 10px;  /* Fixa o botão na parte inferior do card */
+  left: 0;
+  right: 0;
+  text-align: left;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.saiba-mais span {
+  margin-left: 5px;
+  font-size: 1.2em;
+  transition: transform 0.3s ease-in-out;
+}
+
+.saiba-mais:hover {
+  color: var(--primary);
+}
+
+.saiba-mais:hover span {
+  transform: translateX(5px);
 }

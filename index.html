@@ -213,12 +213,19 @@
                             <input type="text" name="phone" id="phone" placeholder="Celular" required />
                           </div>
                           <div class="col-md-6">
-                            <input type="text" name="subject" id="email" placeholder="Título do e-mail" required />
+                            <div style="position: relative;">
+                              <input type="text" name="subject" id="subject" placeholder="Título do e-mail" maxlength="50" oninput="updateTitleCount()" required />
+                              <span id="titleCount" style="position: absolute; bottom: 5px; right: 10px; font-size: 12px; color: grey;">0/50</span>
+                            </div>
+
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-12">
-                            <textarea name="message" id="message" placeholder="Mensagem" rows="5"></textarea>
+                            <div style="position: relative;">
+                              <textarea name="message" id="message" placeholder="Mensagem" rows="5" maxlength="500" oninput="updateCharCount()"></textarea>
+                              <span id="charCount" style="position: absolute; bottom: 5px; right: 10px; font-size: 12px; color: grey;">0/500</span>
+                            </div>
                           </div>
                         </div>
                         <div class="row">
@@ -236,10 +243,7 @@
                 </div>
               </div>
             </section>
-            
-      
-            
-          
+  
           </div>
         </div>
         <div class="col-lg-6 col-md-12 col-12">
@@ -1241,6 +1245,22 @@
                 copiedMsg.style.display = 'none';
             }, 1500);
         });
+    }
+
+    function updateCharCount() {
+      var message = document.getElementById("message");
+      var charCount = document.getElementById("charCount");
+      var length = message.value.length;
+      charCount.textContent = length + "/500";
+      charCount.style.color = length >= 150 ? "red" : "grey";
+    }
+
+    function updateTitleCount() {
+      var title = document.getElementById("subject");
+      var titleCount = document.getElementById("titleCount");
+      var length = title.value.length;
+      titleCount.textContent = length + "/50";
+      titleCount.style.color = length >= 50 ? "red" : "grey";
     }
 
   </script>

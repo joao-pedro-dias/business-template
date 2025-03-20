@@ -1721,7 +1721,7 @@ p {
 .contact-section {
   position: relative;
   z-index: 3;
-  padding-top: 100px;
+  width: 100%;
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .contact-section {
@@ -1817,7 +1817,14 @@ p {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  height: auto;
 }
+
+.col-xl-8 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
 .contact-form-wrapper:hover {
   box-shadow: var(--shadow-4);
 }

@@ -573,8 +573,17 @@
               <p>
                 Certificação de Fotocópia, Reconhecimento de Assinatura Simples ou Menções Especiais...
               </p>
-              <a href="#" class="saiba-mais">Saiba mais <span>→</span></a>
+              <span class="saiba-mais" onclick="openService('atos-notariais')">Saiba mais <span>→</span></span>
             </div>
+
+            <div id="service-modal" class="service-modal">
+              <div class="service-modal-content">
+                <h4 id="modal-title"></h4>
+                <p id="modal-description"></p>
+                <a href="#" class="back-btn" onclick="closeService()">← Voltar</a>
+              </div>
+            </div>
+
           </div>
         </div>
         <div class="col-lg-4 col-md-6">
@@ -1220,6 +1229,29 @@
       titleCount.textContent = length + "/50";
       titleCount.style.color = length >= 50 ? "red" : "grey";
     }
+
+    // Função para abrir o conteúdo do serviço
+    function openService(service) {
+      var modal = document.getElementById("service-modal");
+      var title = document.getElementById("modal-title");
+      var description = document.getElementById("modal-description");
+
+      // A partir do nome do serviço, configure os dados do serviço
+      if (service === 'atos-notariais') {
+        title.innerHTML = 'Atos Notariais';
+        description.innerHTML = 'Aqui estão os detalhes completos dos serviços relacionados a atos notariais, como Certificação de Fotocópia, Reconhecimento de Assinatura Simples ou Menções Especiais, Traduções, Certificação de Tradução, Procurações, e Autenticação de Documentos.';
+      }
+
+      // Exibe o modal
+      modal.style.display = "flex";
+    }
+
+    // Função para fechar o modal e voltar para o conteúdo inicial
+    function closeService() {
+      var modal = document.getElementById("service-modal");
+      modal.style.display = "none";
+    }
+
 
   </script>
 </body>

@@ -408,10 +408,6 @@
             <div class="content">
               <h6>Serviços</h6>
               <h2 class="fw-bold">Os nossos serviços</h2>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form.
-              </p>
             </div>
           </div>
         </div>
@@ -434,7 +430,7 @@
               <p>
                   Planejamento Imigratório, Vistos de Procura de Trabalho...
               </p>
-              <a href="#" class="saiba-mais">Saiba mais <span>→</span></a>
+              <a href="./assets/pages/direto-imigracao.html" class="saiba-mais">Saiba mais <span>→</span></a>
             </div>
           </div>
         </div>
@@ -450,7 +446,7 @@
               <p>
                   Filhos e Netos, Pelo Casamento, Tempo de residência...
               </p>
-              <a href="#" class="saiba-mais">Saiba mais <span>→</span></a>
+              <a href="assets/pages/nacionalidade.html" class="saiba-mais">Saiba mais <span>→</span></a>
             </div>
           </div>
         </div>
@@ -464,9 +460,9 @@
             <div class="service-content">
               <h4>Inscrição de Advogados em Portugal</h4>
               <p>
-                  Representação para a Inscrição na Ordem dos Advogados de Portugal, Pelo Casamento...
+                  Representação para a Inscrição na Ordem dos Advogados de Portugal...
               </p>
-              <a href="#" class="saiba-mais">Saiba mais <span>→</span></a>
+              <a href="assets/pages/insc-adv-pt.html" class="saiba-mais">Saiba mais <span>→</span></a>
             </div>
           </div>
         </div>
@@ -485,7 +481,7 @@
               <p>
                   Transcrição de Casamento, Nacional, Internacional...
               </p>
-              <a href="#" class="saiba-mais">Saiba mais <span>→</span></a>
+              <a href="assets/pages/familia-casamento.html" class="saiba-mais">Saiba mais <span>→</span></a>
             </div>
           </div>
         </div>
@@ -501,7 +497,7 @@
               <p>
                   Divórcio, Consensual, Litigioso...
               </p>
-              <a href="#" class="saiba-mais">Saiba mais <span>→</span></a>
+              <a href="assets/pages/homolog-estrangeira.html" class="saiba-mais">Saiba mais <span>→</span></a>
             </div>
           </div>
         </div>
@@ -519,7 +515,7 @@
               <p>
                   Inventário, Partilhas, Herança, Guarda...
               </p>
-              <a href="#" class="saiba-mais">Saiba mais <span>→</span></a>
+              <a href="assets/pages/adocao-sucessao.html" class="saiba-mais">Saiba mais <span>→</span></a>
             </div>
           </div>
         </div>
@@ -574,14 +570,6 @@
                 Certificação de Fotocópia, Reconhecimento de Assinatura Simples ou Menções Especiais...
               </p>
               <span class="saiba-mais" onclick="openService('atos-notariais')">Saiba mais <span>→</span></span>
-            </div>
-
-            <div id="service-modal" class="service-modal">
-              <div class="service-modal-content">
-                <h4 id="modal-title"></h4>
-                <p id="modal-description"></p>
-                <a href="#" class="back-btn" onclick="closeService()">← Voltar</a>
-              </div>
             </div>
 
           </div>
@@ -1229,29 +1217,6 @@
       titleCount.textContent = length + "/50";
       titleCount.style.color = length >= 50 ? "red" : "grey";
     }
-
-    // Função para abrir o conteúdo do serviço
-    function openService(service) {
-      var modal = document.getElementById("service-modal");
-      var title = document.getElementById("modal-title");
-      var description = document.getElementById("modal-description");
-
-      // A partir do nome do serviço, configure os dados do serviço
-      if (service === 'atos-notariais') {
-        title.innerHTML = 'Atos Notariais';
-        description.innerHTML = 'Aqui estão os detalhes completos dos serviços relacionados a atos notariais, como Certificação de Fotocópia, Reconhecimento de Assinatura Simples ou Menções Especiais, Traduções, Certificação de Tradução, Procurações, e Autenticação de Documentos.';
-      }
-
-      // Exibe o modal
-      modal.style.display = "flex";
-    }
-
-    // Função para fechar o modal e voltar para o conteúdo inicial
-    function closeService() {
-      var modal = document.getElementById("service-modal");
-      modal.style.display = "none";
-    }
-
 
   </script>
 </body>

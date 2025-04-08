@@ -351,13 +351,16 @@ p {
 ===========================*/
 .section-title-five {
   text-align: center;
-  max-width: 550px;
   margin: auto;
   margin-bottom: 50px;
   position: relative;
   z-index: 5;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .section-title-five {
+    margin-bottom: 45px;
+  }
   .section-title-five {
     margin-bottom: 45px;
   }
@@ -393,6 +396,7 @@ p {
 }
 .section-title-five p {
   color: var(--dark-3);
+  text-align: justify;
 }
 
 .made-in-ayroui{
@@ -1189,7 +1193,7 @@ p {
 }
 
 .contacts-eight {
-  padding: 100px 0 0 0;
+  padding: 50px 0 0 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -2169,4 +2173,46 @@ hr{
 
 .back-btn:hover {
   background-color: #0056b3;
+}
+
+.btn-back {
+  margin-top: 5%;
+  position: left;
+  color: var(--primary);
+  font-size: 20px;
+  padding: 12px 24px;
+}
+
+@media (max-width: 767px) {
+  .btn-back {
+    margin-top: 30px;
+    padding: 0px;
+  }
+}
+
+
+.btn-back:hover {
+  color: var(--primary-light);
+}
+
+.fullscreen-back-button {
+  position: relative;
+  width: 100vw;
+  height: 40px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-back-button a {
+  font-size: 24px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.fullscreen-back-button a:hover {
+  background-color: var(--primary);
 }

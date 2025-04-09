@@ -396,7 +396,7 @@ p {
 }
 .section-title-five p {
   color: var(--dark-3);
-  text-align: justify;
+  text-align: left;
 }
 
 .made-in-ayroui{
@@ -2215,4 +2215,30 @@ hr{
 
 .fullscreen-back-button a:hover {
   background-color: var(--primary);
+}
+
+/* Esconde o seletor do Google */
+#google_translate_element {
+  display: none;
+}
+
+/* Remove a barra superior de tradução do Google */
+.goog-te-banner-frame.skiptranslate,
+body > .skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+
+/* Estilo das bandeiras */
+.idiomas img {
+  width: 32px;
+  height: auto;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.idiomas img:hover {
+  transform: scale(1.1);
 }

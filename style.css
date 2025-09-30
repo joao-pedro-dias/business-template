@@ -2243,7 +2243,7 @@ body {
   transform: scale(1.1);
 }
 
-.tab-pane {
+.tab-pane-sobrenos {
   max-height: 200px;   /* ajuste a altura conforme necessidade */
   overflow-y: auto;    /* cria o scroll vertical */
   padding-right: 10px; /* para evitar que o texto encoste na barra */

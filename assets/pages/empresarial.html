@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 
 <head>
   <!--====== Required meta tags ======-->
@@ -7,7 +7,6 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 
   <!--====== Title ======-->
   <title>Dra. Priscila Carvalho | Advocacia</title>
@@ -15,22 +14,19 @@
   <!--====== Favicon Icon ======-->
   <link rel="shortcut icon" href="../../assets/images/favicon.svg" type="image/svg" width="5" height="5"/>
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:wght@500;600;700&amp;display=swap" rel="stylesheet" />
   <!--====== Bootstrap css ======-->
   <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
 
-  <!--====== Line Icons css ======-->
-  <link rel="stylesheet" href="../../assets/css/lineicons.css" />
 
-  <!--====== Tiny Slider css ======-->
-  <link rel="stylesheet" href="../../assets/css/tiny-slider.css" />
 
-  <!--====== gLightBox css ======-->
-  <link rel="stylesheet" href="../../assets/css/glightbox.min.css" />
 
   <link rel="stylesheet" href="../../style.css" />
 </head>
 
-<body>
+<body class="service-page">
 
   <!--====== NAVBAR NINE PART START ======-->
 
@@ -40,10 +36,10 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="/index.html#services">
-              <img src="../../assets/images/logo-navbar.svg" alt="Logo" class="img-fluid" width="60" height="39" />
+              <img src="../../assets/images/favicon.svg" alt="Logo" class="img-fluid" width="60" height="39" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
-              aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
+              aria-controls="navbarNine" aria-expanded="false" aria-label="Abrir menu">
               <span class="toggler-icon"></span>
               <span class="toggler-icon"></span>
               <span class="toggler-icon"></span>
@@ -78,8 +74,8 @@
     <!-- container -->
   </section>
 
- <div class="container" style="margin-top: 100px;">
-    <a class="btn-back" href="/index.html#services"><- Voltar</a>
+ <div class="container service-return">
+    <a class="btn-back" href="/index.html#services"><svg class="service-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg>Voltar</a>
 </div>
 
  <section id="sobrenos" class="about-area about-five">
@@ -170,7 +166,10 @@
               <circle cx="60.333" cy="132" r="1.66667" fill="#DADADA" />
               <circle cx="104" cy="132" r="1.66667" fill="#DADADA" />
             </svg>
-            <img src="../../assets/images/foto6.jpg" alt="dra-priscila" width="auto" height="auto" style="border-radius: 8px;"/>
+            <picture class="optimized-photo">
+              <source type="image/webp" srcset="../../assets/images/optimized/foto6-480.webp 480w, ../../assets/images/optimized/foto6-960.webp 960w, ../../assets/images/optimized/foto6-1280.webp 1280w" sizes="(max-width: 991px) calc(100vw - 56px), 540px" />
+              <img src="../../assets/images/foto6.jpg" alt="dra-priscila" width="4480" height="6720" fetchpriority="high" decoding="async" style="border-radius: 8px;" />
+            </picture>
           </div>
         </div>
         <div class="col-lg-6 col-12">
@@ -229,7 +228,7 @@
   <!-- ===== service-area end ===== -->
 
   <div class="fullscreen-back-button">
-    <a href="/index.html#services">Voltar</a>
+    <a href="/index.html#services"><svg class="service-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg>Voltar</a>
   </div>
 
   <section id="contact" class="contacts-area contacts-eight">
@@ -266,7 +265,7 @@
               <div class="copy-container">
                 <p id="endereco">
                   Praça Martim Moniz 572 1100-074 Lisboa, Centro Comercial Mouraria, piso -1, loja 232.
-                <i class="fas fa-copy copy-icon" onclick="copyToClipboard('endereco')"></i>
+                <button type="button" class="copy-icon" onclick="copyToClipboard('endereco')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                 <span id="copied-endereco" class="copied" style="display: none;">Copiado!</span></p>
               </div>
               <br>
@@ -274,7 +273,7 @@
               <div class="copy-container">
                 <p id="contato">
                   + 351 933 738 232
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('contato')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('contato')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-contato" class="copied" style="display: none;">Copiado!</span>
                 </p>
               </div>
@@ -283,7 +282,7 @@
               <div class="copy-container">
                 <p id="email">
                   priscilacarvalho-68104l@adv.oa.pt
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('email')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('email')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-email" class="copied" style="display: none;">Copiado!</span>
                 </p>
               </div>
@@ -305,7 +304,7 @@
               <div class="copy-container">
                 <p id="endereco2">
                   Av. Dom João II 17 2º andar1990-083 Lisboa (Expo)
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('endereco2')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('endereco2')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-endereco2" class="copied" style="display: none;">Copiado!</span></p>
                 </p>
               </div>
@@ -315,7 +314,7 @@
               <div class="copy-container">
                 <p id="contato2">
                   +351 934 295 280
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('contato2')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('contato2')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-contato2" class="copied" style="display: none;">Copiado!</span>
                 </p>
               </div>
@@ -324,7 +323,7 @@
               <div class="copy-container">
                 <p id="email2">
                   priscilacarvalho-68104l@adv.oa.pt
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('email2')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('email2')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-email2" class="copied" style="display: none;">Copiado!</span>
                 </p>
               </div>
@@ -346,7 +345,7 @@
               <div class="copy-container">
                 <p id="endereco3">
                   Almada - Av. Dom Nuno álvares Pereira, n. 7B, Centro comercial, 2800-178
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('endereco3')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('endereco3')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-endereco3" class="copied" style="display: none;">Copiado!</span></p>
                 </p>
               </div>
@@ -355,7 +354,7 @@
               <div class="copy-container">
                 <p id="contato3">
                   +351 931 448 929
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('contato3')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('contato3')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-contato3" class="copied" style="display: none;">Copiado!</span>
                 </p>
               </div>
@@ -364,7 +363,7 @@
               <div class="copy-container">
                 <p id="email3">
                   priscilacarvalho-68104l@adv.oa.pt
-                  <i class="fas fa-copy copy-icon" onclick="copyToClipboard('email3')"></i>
+                  <button type="button" class="copy-icon" onclick="copyToClipboard('email3')" aria-label="Copiar para a área de transferência" title="Copiar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="13" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>
                   <span id="copied-email3" class="copied" style="display: none;">Copiado!</span>
                 </p>
               </div>
@@ -381,8 +380,7 @@
   <!-- ========================= map-section end ========================= -->
   <section class="map-section map-style-9">
     <div class="map-container">
-      <object style="border:0; height: 500px; width: 100%;"
-        data="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d194.56637093547255!2d-9.13556!3d38.716387!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecd86ff11b555%3A0xdacc660ec4ac761d!2sPriscila%20Carvalho%20Advogada!5e0!3m2!1spt-BR!2sbr!4v1734010499473!5m2!1spt-BR!2sbr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></object>
+      <iframe title="Mapa do escritório da Dra. Priscila Carvalho" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d194.56637093547255!2d-9.13556!3d38.716387!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecd86ff11b555%3A0xdacc660ec4ac761d!2sPriscila%20Carvalho%20Advogada!5e0!3m2!1spt-BR!2sbr!4v1734010499473!5m2!1spt-BR!2sbr" width="800" height="600" style="border:0; height:500px; width:100%;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     </div>
   </section>
@@ -451,14 +449,7 @@
                   </p>
                 </div></center>
                 
-                <!-- <form action="#" method="get" target="_blank" class="newsletter-form">
-                  <input name="EMAIL" placeholder="Email address" required="required" type="email" />
-                  <div class="button">
-                    <button class="sub-btn">
-                      <i class="lni lni-envelope"></i>
-                    </button>
-                  </div>
-                </form> -->
+
               </div>
             </div>
           </div>
@@ -468,14 +459,12 @@
   </footer>
 
   <a href="#" class="scroll-top btn-hover">
-    <i class="lni lni-chevron-up"></i>
+    <svg class="scroll-top-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 14 7-7 7 7"></path></svg>
   </a>
 
   <!--====== js ======-->
   <script src="../../assets/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/js/main.js"></script>
-  <script src="../../assets/js/glightbox.min.js"></script>
-  <script src="../../assets/js/tiny-slider.js"></script>
 
   <script>
 
@@ -483,9 +472,13 @@
     let navbarTogglerNine = document.querySelector(
       ".navbar-nine .navbar-toggler"
     );
-    navbarTogglerNine.addEventListener("click", function () {
-      navbarTogglerNine.classList.toggle("active");
-    });
+    if (navbarTogglerNine) {
+      navbarTogglerNine.addEventListener("click", function () {
+        var openingMenu = navbarTogglerNine.getAttribute("aria-expanded") !== "true";
+        navbarTogglerNine.classList.toggle("active", openingMenu);
+        navbarTogglerNine.setAttribute("aria-label", openingMenu ? "Fechar menu" : "Abrir menu");
+      });
+    }
 
     // ==== left sidebar toggle
     let sidebarLeft = document.querySelector(".sidebar-left");
@@ -504,36 +497,20 @@
           navbarCollapse.classList.remove('show'); // Fecha o menu
           navbarToggler.classList.remove('active'); // Remove a classe 'active' do botão
           navbarToggler.setAttribute("aria-expanded", "false"); // Atualiza o estado do atributo
+          navbarToggler.setAttribute("aria-label", "Abrir menu");
         }
       });
     });
   });
 
-    overlayLeft.addEventListener("click", function () {
-      sidebarLeft.classList.toggle("open");
-      overlayLeft.classList.toggle("open");
-    });
-    sidebarClose.addEventListener("click", function () {
-      sidebarLeft.classList.remove("open");
-      overlayLeft.classList.remove("open");
-    });
+    if (overlayLeft && sidebarLeft) { overlayLeft.addEventListener("click", function () { sidebarLeft.classList.toggle("open"); overlayLeft.classList.toggle("open"); }); }
+    if (sidebarClose && sidebarLeft && overlayLeft) { sidebarClose.addEventListener("click", function () { sidebarLeft.classList.remove("open"); overlayLeft.classList.remove("open"); }); }
 
     // ===== navbar nine sideMenu
     let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
 
-    sideMenuLeftNine.addEventListener("click", function () {
-      sidebarLeft.classList.add("open");
-      overlayLeft.classList.add("open");
-    });
+    if (sideMenuLeftNine && sidebarLeft && overlayLeft) { sideMenuLeftNine.addEventListener("click", function () { sidebarLeft.classList.add("open"); overlayLeft.classList.add("open"); }); }
 
-    //========= glightbox
-    // GLightbox({
-    //   'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
-    //   'type': 'video',
-    //   'source': 'youtube', //vimeo, youtube or local
-    //   'width': 900,
-    //   'autoplayVideos': true,
-    // });
 
     document.addEventListener('selectstart', function(e) {
       e.preventDefault();

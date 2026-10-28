@@ -1,51 +1,98 @@
 (function () {
 
+    // Show loading feedback only when core page resources take longer than a brief moment.
+    var preloader = document.createElement("div");
+    preloader.className = "site-preloader";
+    preloader.setAttribute("aria-hidden", "true");
+    preloader.innerHTML = '<div class="site-preloader__content" role="status" aria-live="polite"><span class="site-preloader__spinner" aria-hidden="true"></span><span>A carregar…</span></div>';
+    document.body.appendChild(preloader);
+
+    var pageLoaded = false;
+    var revealPreloaderTimer = window.setTimeout(function () {
+        if (!pageLoaded) {
+            preloader.classList.add("is-visible");
+            preloader.setAttribute("aria-hidden", "false");
+        }
+    }, 400);
+
+    var preloaderSafetyTimer = window.setTimeout(finishPageLoad, 6000);
+
+    function finishPageLoad() {
+        if (pageLoaded) return;
+        pageLoaded = true;
+        window.clearTimeout(revealPreloaderTimer);
+        window.clearTimeout(preloaderSafetyTimer);
+        preloader.classList.remove("is-visible");
+        preloader.setAttribute("aria-hidden", "true");
+        window.setTimeout(function () {
+            if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+        }, 220);
+    }
+
+    if (document.readyState === "complete") {
+        finishPageLoad();
+    } else {
+        window.addEventListener("load", finishPageLoad, { once: true });
+    }
+
+    // Keep the mobile menu icon and accessible label in sync on the home and service pages.
+    var mobileNavbar = document.getElementById("navbarNine");
+    var mobileNavbarToggler = document.querySelector(".navbar-area.navbar-nine .navbar-toggler");
+    if (mobileNavbar && mobileNavbarToggler) {
+        mobileNavbar.addEventListener("shown.bs.collapse", function () {
+            mobileNavbarToggler.classList.add("active");
+            mobileNavbarToggler.setAttribute("aria-expanded", "true");
+            mobileNavbarToggler.setAttribute("aria-label", "Fechar menu");
+        });
+        mobileNavbar.addEventListener("hidden.bs.collapse", function () {
+            mobileNavbarToggler.classList.remove("active");
+            mobileNavbarToggler.setAttribute("aria-expanded", "false");
+            mobileNavbarToggler.setAttribute("aria-label", "Abrir menu");
+        });
+        document.addEventListener("click", function (event) {
+            var clickedToggler = event.target.closest(".navbar-area.navbar-nine .navbar-toggler");
+            if (!clickedToggler) return;
+            window.setTimeout(function () {
+                var isExpanded = mobileNavbar.classList.contains("show");
+                clickedToggler.classList.toggle("active", isExpanded);
+                clickedToggler.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+                clickedToggler.setAttribute("aria-label", isExpanded ? "Fechar menu" : "Abrir menu");
+            }, 0);
+        });
+    }
+
     /*=====================================
     Sticky
     ======================================= */
-    window.onscroll = function () {
-        var header_navbar = document.querySelector(".navbar-area");
-        var sticky = header_navbar.offsetTop;
+    function updateScrollState() {
+        var headerNavbar = document.querySelector(".navbar-area");
+        var backToTop = document.querySelector(".scroll-top");
+        var scrolled = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-        if (window.pageYOffset > sticky) {
-            header_navbar.classList.add("sticky");
-        } else {
-            header_navbar.classList.remove("sticky");
+        if (headerNavbar && scrolled > headerNavbar.offsetTop) {
+            headerNavbar.classList.add("sticky");
+        } else if (headerNavbar) {
+            headerNavbar.classList.remove("sticky");
         }
 
-        // show or hide the back-to-top button
-        var backToTo = document.querySelector(".scroll-top");
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            backToTo.style.display = "flex";
-        } else {
-            backToTo.style.display = "none";
+        if (backToTop) backToTop.style.display = scrolled > 50 ? "flex" : "none";
+        if (document.body.classList.contains("home-page")) {
+            document.body.classList.toggle("has-scrolled", scrolled > 120);
         }
-    };
+    }
 
-    // Function to slow down the scroll
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    updateScrollState();
+
+    // Use native scrolling so the browser can interrupt movement and honour reduced motion.
     function slowScroll(target) {
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 60; // Ajuste de 60 pixels
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
-
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const run = ease(timeElapsed, startPosition, distance, 1000);
-            window.scrollTo(0, run);
-
-            if (timeElapsed < 1000) requestAnimationFrame(animation);
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var behavior = reduceMotion ? "auto" : "smooth";
+        if (target === document.body || target === document.documentElement) {
+            window.scrollTo({ top: 0, behavior: behavior });
+        } else if (target) {
+            target.scrollIntoView({ behavior: behavior, block: "start" });
         }
-
-        function ease(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t + b;
-            t--;
-            return -c / 2 * (t * (t - 2) - 1) + b;
-        }
-
-        requestAnimationFrame(animation);
     }
 
     // section menu active
@@ -56,10 +103,12 @@
         for (var i = 0; i < sections.length; i++) {
             var currLink = sections[i];
             var val = currLink.getAttribute('href');
+            if (!val || val.charAt(0) !== '#') continue;
             var refElement = document.querySelector(val);
+            if (!refElement) continue;
             var scrollTopMinus = scrollPos + 73;
             if (refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
-                document.querySelector('.page-scroll').classList.remove('active');
+                document.querySelectorAll('.page-scroll.active').forEach(function (activeLink) { activeLink.classList.remove('active'); });
                 currLink.classList.add('active');
             } else {
                 currLink.classList.remove('active');
@@ -87,16 +136,19 @@
 
     // Adiciona evento de clique ao botão "scroll-top"
     var backToTopButton = document.querySelector('.scroll-top');
-    backToTopButton.addEventListener('click', function(e) {
-        e.preventDefault(); // Impede o comportamento padrão do link
-        slowScroll(document.body); // Scroll suave para o topo
-    });
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            slowScroll(document.body);
+        });
+    }
 
     "use strict";
 
     document.addEventListener("DOMContentLoaded", function() {
         const currentYear = new Date().getFullYear(); // Obtém o ano atual
-        document.getElementById("current-year").textContent = `© ${currentYear}`; // Atualiza o texto
+        var currentYearElement = document.getElementById("current-year");
+        if (currentYearElement) currentYearElement.textContent = `© ${currentYear}`;
     });
     
 })();
